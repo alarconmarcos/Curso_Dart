@@ -1,16 +1,23 @@
-void main() {}
+void main() {
+  escolherMeioTransporte(Transporte.skate);
 
-void escolherMeioTransporte(int locomocao) {
-  if (locomocao == 0) {
-    print("Vou de CARRO para aventura!");
-  } else if (locomocao == 1) {
-    print("Vou de BIKe para aventura!");
-  } else {
-    print("Vou para aventura!");
-  }
+  List<Transporte> transportes = Transporte.values;
+
+  Set<String> registrosVisitados = <String>{};
+  registrosVisitados = registrarDestinos("São Paulo", registrosVisitados);
+  registrosVisitados = registrarDestinos("Recife", registrosVisitados);
+  registrosVisitados = registrarDestinos("Rio de Janeiro", registrosVisitados);
+  registrosVisitados = registrarDestinos("São Paulo", registrosVisitados);
+
+  print(registrosVisitados);
 }
 
-void escolherMeioTransporteEnum(Transporte locomocao) {
+Set<String> registrarDestinos(String destino, Set<String> banco) {
+  banco.add(destino);
+  return banco;
+}
+
+void escolherMeioTransporte(Transporte locomocao) {
   switch (locomocao) {
     case Transporte.carro:
       print("Vou de CARRO para aventura!");
