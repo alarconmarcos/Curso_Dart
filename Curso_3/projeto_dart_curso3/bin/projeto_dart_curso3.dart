@@ -5,11 +5,27 @@ void main() {
 
   Set<String> registrosVisitados = <String>{};
   registrosVisitados = registrarDestinos("São Paulo", registrosVisitados);
-  registrosVisitados = registrarDestinos("Recife", registrosVisitados);
-  registrosVisitados = registrarDestinos("Rio de Janeiro", registrosVisitados);
-  registrosVisitados = registrarDestinos("São Paulo", registrosVisitados);
 
-  print(registrosVisitados);
+  Map<String, dynamic> registrarPrecos = {};
+
+  registrarPrecos["São Paulo"] = 1200;
+  registrarPrecos["Rio de Janeiro"] = 1500;
+  registrarPrecos["Nova York"] = "Muito caro!";
+
+  print(registrarPrecos);
+
+  dynamic meuNumero = 7.1;
+  print(meuNumero.runtimeType);
+  meuNumero = "String Qualquer";
+  print(meuNumero.runtimeType);
+
+  Viagem viagemHoje = Viagem();
+  viagemHoje.codigoTrabalho;
+}
+
+class Viagem {
+  static String codigoTrabalho = "DJNADS12";
+  double dinheiro = 0;
 }
 
 Set<String> registrarDestinos(String destino, Set<String> banco) {
